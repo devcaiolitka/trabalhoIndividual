@@ -1,3 +1,9 @@
-*{
-  margin: 0;
-}
+body { font-family: sans-serif; margin: 0; padding: 24px; }
+.container { max-width: 640px; margin: 0 auto; }
+form { display: flex; gap: 8px; margin-bottom: 16px; }
+input { flex: 1; padding: 6px; }
+button { padding: 6px 12px; cursor: pointer; }
+table { width: 100%; border-collapse: collapse; }
+th, td { border: 1px solid #ccc; padding: 6px; text-align: left; }
+td button { margin-right: 4px; }
+.erro { color: red; }
