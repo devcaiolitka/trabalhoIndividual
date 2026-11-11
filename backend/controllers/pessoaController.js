@@ -37,6 +37,23 @@ async function inserir(req, res) {
     }
 }
 
+async function atualizar(req, res) {
+    try {
+        const { pes_nome } = req.body;
+
+        const pessoa = await Pessoa.atualizar(req.params.id, pes_nome);
+
+        if (!pessoa) {
+            return res.status(404).json({ mensagem: 'Pessoa não encontrada' });
+        }
+
+        res.json(pessoa);
+
+    } catch (erro) {
+        res.status(500).json({ erro: erro.message });
+    }
+}
+
 async function excluir(req, res) {
 
     try {
@@ -57,5 +74,6 @@ module.exports = {
     listar,
     buscar,
     inserir,
+    atualizar,
     excluir
 };
